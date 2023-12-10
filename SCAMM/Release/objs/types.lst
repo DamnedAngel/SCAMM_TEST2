@@ -1,0 +1,203 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : free open source ANSI-C Compiler
+                              3 ; Version 3.6.0 #9615 (MINGW64)
+                              4 ;--------------------------------------------------------
+                              5 	.module types
+                              6 	.optsdcc -mz80
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _uitoa
+                             12 	.globl _itoa
+                             13 ;--------------------------------------------------------
+                             14 ; special function registers
+                             15 ;--------------------------------------------------------
+                             16 ;--------------------------------------------------------
+                             17 ; ram data
+                             18 ;--------------------------------------------------------
+                             19 	.area _DATA
+                             20 ;--------------------------------------------------------
+                             21 ; ram data
+                             22 ;--------------------------------------------------------
+                             23 	.area _INITIALIZED
+                             24 ;--------------------------------------------------------
+                             25 ; absolute external ram data
+                             26 ;--------------------------------------------------------
+                             27 	.area _DABS (ABS)
+                             28 ;--------------------------------------------------------
+                             29 ; global & static initialisations
+                             30 ;--------------------------------------------------------
+                             31 	.area _HOME
+                             32 	.area _GSINIT
+                             33 	.area _GSFINAL
+                             34 	.area _GSINIT
+                             35 ;--------------------------------------------------------
+                             36 ; Home
+                             37 ;--------------------------------------------------------
+                             38 	.area _HOME
+                             39 	.area _HOME
+                             40 ;--------------------------------------------------------
+                             41 ; code
+                             42 ;--------------------------------------------------------
+                             43 	.area _CODE
+                             44 ;..\..\..\libs\util\types.c:15: void uitoa(unsigned int value, char* string, int radix)
+                             45 ;	---------------------------------
+                             46 ; Function uitoa
+                             47 ; ---------------------------------
+   0000                      48 _uitoa::
+   0000 DD E5         [15]   49 	push	ix
+   0002 DD 21 00 00   [14]   50 	ld	ix,#0
+   0006 DD 39         [15]   51 	add	ix,sp
+   0008 F5            [11]   52 	push	af
+                             53 ;..\..\..\libs\util\types.c:22: do {
+   0009 DD 36 FE 10   [19]   54 	ld	-2 (ix),#0x10
+   000D                      55 00103$:
+                             56 ;..\..\..\libs\util\types.c:23: string[--index] = '0' + (value % radix);
+   000D DD 35 FE      [23]   57 	dec	-2 (ix)
+   0010 DD 7E 06      [19]   58 	ld	a,6 (ix)
+   0013 DD 86 FE      [19]   59 	add	a, -2 (ix)
+   0016 4F            [ 4]   60 	ld	c,a
+   0017 DD 7E 07      [19]   61 	ld	a,7 (ix)
+   001A CE 00         [ 7]   62 	adc	a, #0x00
+   001C 47            [ 4]   63 	ld	b,a
+   001D DD 5E 08      [19]   64 	ld	e,8 (ix)
+   0020 DD 56 09      [19]   65 	ld	d,9 (ix)
+   0023 C5            [11]   66 	push	bc
+   0024 D5            [11]   67 	push	de
+   0025 D5            [11]   68 	push	de
+   0026 DD 6E 04      [19]   69 	ld	l,4 (ix)
+   0029 DD 66 05      [19]   70 	ld	h,5 (ix)
+   002C E5            [11]   71 	push	hl
+   002D CDr00r00      [17]   72 	call	__moduint
+   0030 F1            [10]   73 	pop	af
+   0031 F1            [10]   74 	pop	af
+   0032 D1            [10]   75 	pop	de
+   0033 C1            [10]   76 	pop	bc
+   0034 7D            [ 4]   77 	ld	a,l
+   0035 C6 30         [ 7]   78 	add	a, #0x30
+   0037 02            [ 7]   79 	ld	(bc),a
+                             80 ;..\..\..\libs\util\types.c:24: if (string[index] > '9') string[index] += 'A' - ':';   /* continue with A, B,.. */
+   0038 0A            [ 7]   81 	ld	a,(bc)
+   0039 6F            [ 4]   82 	ld	l,a
+   003A 3E 39         [ 7]   83 	ld	a,#0x39
+   003C 95            [ 4]   84 	sub	a, l
+   003D 30 04         [12]   85 	jr	NC,00102$
+   003F 7D            [ 4]   86 	ld	a,l
+   0040 C6 07         [ 7]   87 	add	a, #0x07
+   0042 02            [ 7]   88 	ld	(bc),a
+   0043                      89 00102$:
+                             90 ;..\..\..\libs\util\types.c:25: value /= radix;
+   0043 D5            [11]   91 	push	de
+   0044 DD 6E 04      [19]   92 	ld	l,4 (ix)
+   0047 DD 66 05      [19]   93 	ld	h,5 (ix)
+   004A E5            [11]   94 	push	hl
+   004B CDr00r00      [17]   95 	call	__divuint
+   004E F1            [10]   96 	pop	af
+   004F F1            [10]   97 	pop	af
+   0050 DD 75 04      [19]   98 	ld	4 (ix),l
+                             99 ;..\..\..\libs\util\types.c:26: } while (value != 0);
+   0053 DD 74 05      [19]  100 	ld	5 (ix), h
+   0056 7C            [ 4]  101 	ld	a, h
+   0057 DD B6 04      [19]  102 	or	a,4 (ix)
+   005A 20 B1         [12]  103 	jr	NZ,00103$
+                            104 ;..\..\..\libs\util\types.c:28: do {
+   005C 0E 00         [ 7]  105 	ld	c,#0x00
+   005E DD 46 FE      [19]  106 	ld	b,-2 (ix)
+   0061                     107 00106$:
+                            108 ;..\..\..\libs\util\types.c:29: string[i++] = string[index++];
+   0061 59            [ 4]  109 	ld	e,c
+   0062 0C            [ 4]  110 	inc	c
+   0063 DD 7E 06      [19]  111 	ld	a,6 (ix)
+   0066 83            [ 4]  112 	add	a, e
+   0067 5F            [ 4]  113 	ld	e,a
+   0068 DD 7E 07      [19]  114 	ld	a,7 (ix)
+   006B CE 00         [ 7]  115 	adc	a, #0x00
+   006D 57            [ 4]  116 	ld	d,a
+   006E DD 70 FF      [19]  117 	ld	-1 (ix),b
+   0071 04            [ 4]  118 	inc	b
+   0072 DD 7E 06      [19]  119 	ld	a,6 (ix)
+   0075 DD 86 FF      [19]  120 	add	a, -1 (ix)
+   0078 6F            [ 4]  121 	ld	l,a
+   0079 DD 7E 07      [19]  122 	ld	a,7 (ix)
+   007C CE 00         [ 7]  123 	adc	a, #0x00
+   007E 67            [ 4]  124 	ld	h,a
+   007F 7E            [ 7]  125 	ld	a,(hl)
+   0080 12            [ 7]  126 	ld	(de),a
+                            127 ;..\..\..\libs\util\types.c:30: } while (index < MAX_NUMBER_OF_CONVERTED_DIGITS);
+   0081 78            [ 4]  128 	ld	a,b
+   0082 D6 10         [ 7]  129 	sub	a, #0x10
+   0084 38 DB         [12]  130 	jr	C,00106$
+                            131 ;..\..\..\libs\util\types.c:32: string[i] = 0; /* string terminator */
+   0086 DD 6E 06      [19]  132 	ld	l,6 (ix)
+   0089 DD 66 07      [19]  133 	ld	h,7 (ix)
+   008C 06 00         [ 7]  134 	ld	b,#0x00
+   008E 09            [11]  135 	add	hl, bc
+   008F 36 00         [10]  136 	ld	(hl),#0x00
+   0091 DD F9         [10]  137 	ld	sp, ix
+   0093 DD E1         [14]  138 	pop	ix
+   0095 C9            [10]  139 	ret
+                            140 ;..\..\..\libs\util\types.c:35: void itoa(int value, char* string, int radix)
+                            141 ;	---------------------------------
+                            142 ; Function itoa
+                            143 ; ---------------------------------
+   0096                     144 _itoa::
+   0096 DD E5         [15]  145 	push	ix
+   0098 DD 21 00 00   [14]  146 	ld	ix,#0
+   009C DD 39         [15]  147 	add	ix,sp
+                            148 ;..\..\..\libs\util\types.c:37: if (value < 0 && radix == 10) {
+   009E DD CB 05 7E   [20]  149 	bit	7, 5 (ix)
+   00A2 28 40         [12]  150 	jr	Z,00102$
+   00A4 DD 7E 08      [19]  151 	ld	a,8 (ix)
+   00A7 D6 0A         [ 7]  152 	sub	a, #0x0a
+   00A9 20 39         [12]  153 	jr	NZ,00102$
+   00AB DD 7E 09      [19]  154 	ld	a,9 (ix)
+   00AE B7            [ 4]  155 	or	a, a
+   00AF 20 33         [12]  156 	jr	NZ,00102$
+                            157 ;..\..\..\libs\util\types.c:38: *string++ = '-';
+   00B1 DD 6E 06      [19]  158 	ld	l,6 (ix)
+   00B4 DD 66 07      [19]  159 	ld	h,7 (ix)
+   00B7 36 2D         [10]  160 	ld	(hl),#0x2d
+   00B9 23            [ 6]  161 	inc	hl
+   00BA DD 75 06      [19]  162 	ld	6 (ix),l
+   00BD DD 74 07      [19]  163 	ld	7 (ix),h
+                            164 ;..\..\..\libs\util\types.c:39: uitoa(-value, string, radix);
+   00C0 AF            [ 4]  165 	xor	a, a
+   00C1 DD 96 04      [19]  166 	sub	a, 4 (ix)
+   00C4 4F            [ 4]  167 	ld	c,a
+   00C5 3E 00         [ 7]  168 	ld	a, #0x00
+   00C7 DD 9E 05      [19]  169 	sbc	a, 5 (ix)
+   00CA 47            [ 4]  170 	ld	b,a
+   00CB DD 6E 08      [19]  171 	ld	l,8 (ix)
+   00CE DD 66 09      [19]  172 	ld	h,9 (ix)
+   00D1 E5            [11]  173 	push	hl
+   00D2 DD 6E 06      [19]  174 	ld	l,6 (ix)
+   00D5 DD 66 07      [19]  175 	ld	h,7 (ix)
+   00D8 E5            [11]  176 	push	hl
+   00D9 C5            [11]  177 	push	bc
+   00DA CDr00r00      [17]  178 	call	_uitoa
+   00DD 21 06 00      [10]  179 	ld	hl,#6
+   00E0 39            [11]  180 	add	hl,sp
+   00E1 F9            [ 6]  181 	ld	sp,hl
+   00E2 18 1D         [12]  182 	jr	00105$
+   00E4                     183 00102$:
+                            184 ;..\..\..\libs\util\types.c:42: uitoa(value, string, radix);
+   00E4 DD 6E 08      [19]  185 	ld	l,8 (ix)
+   00E7 DD 66 09      [19]  186 	ld	h,9 (ix)
+   00EA E5            [11]  187 	push	hl
+   00EB DD 6E 06      [19]  188 	ld	l,6 (ix)
+   00EE DD 66 07      [19]  189 	ld	h,7 (ix)
+   00F1 E5            [11]  190 	push	hl
+   00F2 DD 6E 04      [19]  191 	ld	l,4 (ix)
+   00F5 DD 66 05      [19]  192 	ld	h,5 (ix)
+   00F8 E5            [11]  193 	push	hl
+   00F9 CDr00r00      [17]  194 	call	_uitoa
+   00FC 21 06 00      [10]  195 	ld	hl,#6
+   00FF 39            [11]  196 	add	hl,sp
+   0100 F9            [ 6]  197 	ld	sp,hl
+   0101                     198 00105$:
+   0101 DD E1         [14]  199 	pop	ix
+   0103 C9            [10]  200 	ret
+                            201 	.area _CODE
+                            202 	.area _INITIALIZER
+                            203 	.area _CABS (ABS)

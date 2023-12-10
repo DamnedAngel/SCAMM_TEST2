@@ -1,0 +1,18 @@
+-mjwx
+-i Release\objs\SCAMM.ihx
+-b _CODE = 0x0106
+-b _DATA = 0x0000
+-k C:\Program Files\SDCC\bin\..\lib\z80
+-l z80
+Release\objs\SCAMM.rel
+Release\objs\crt0msx_msxdos_simple.rel
+Release\objs\putchar.rel
+Release\objs\getchar.rel
+Release\objs\printf.rel
+Release\objs\types.rel
+Release\objs\msxbiostools.rel
+Release\objs\msxkeyboard.rel
+Release\objs\dos2.rel
+Release\objs\scamm_vdp.rel
+
+-e

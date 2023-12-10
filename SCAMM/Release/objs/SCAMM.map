@@ -1,0 +1,155 @@
+ASxxxx Linker V03.00 + NoICE + sdld,  page 1.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+.  .ABS.                            00000000    00000000 =           0. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000000  .__.ABS.                           
+     00000000  l__CABS                         
+     00000000  l__DABS                         
+     00000000  l__GSINIT                       
+     00000000  l__HEADER                       
+     00000000  l__HEAP                         
+     00000000  l__HOME                         
+     00000000  l__INITIALIZED                  
+     00000000  l__INITIALIZER                  
+     00000000  s__CABS                         
+     00000000  s__DABS                         
+     00000000  s__HEADER                       
+     00000000  s__HEADER0                      
+     00000001  l__GSFINAL                      
+     00000006  l__HEADER0                      
+     00000018  l__DATA                         
+     00000106  s__CODE                         
+     00000C99  l__CODE                         
+     00000D9F  s__DATA                         
+     00000DB7  s__GSFINAL                      
+     00000DB7  s__GSINIT                       
+     00000DB7  s__HOME                         
+     00000DB7  s__INITIALIZED                  
+     00000DB8  s__HEAP                         
+     00000DB8  s__INITIALIZER                  
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 2.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_CODE                               00000106    00000C99 =        3225. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000106  _testmsx2                          SCAMM
+     0000011E  _loadConf                          SCAMM
+     00000121  _loadGame                          SCAMM
+     00000124  _loadScreen                        SCAMM
+     00000203  _runGame                           SCAMM
+     0000022E  _main                              SCAMM
+     00000324  _putchar                           
+     0000032F  _getchar                           
+     00000913  _printf                            printf
+     00000922  _sprintf                           printf
+     00000938  _uitoa                             types
+     000009CE  _itoa                              types
+     00000A3C  _readFromMainROM                   
+     00000A55  _keyboard_chget                    
+     00000A62  _keyboard_read                     
+     00000A7A  _open                              
+     00000AA1  _creat                             
+     00000ACB  _close                             
+     00000AE2  _dup                               
+     00000B03  _read                              
+     00000B2E  _write                             
+     00000B59  _lseek                             
+     00000B87  _exit                              
+     00000B9A  _vdp_sprite_disable                
+     00000BA5  _vdp_sprite_enable                 
+     00000BAE  _vdp_disable_screen_and_interrup   
+     00000BB8  _vdp_enable_screen_and_interrupt   
+     00000BC3  _vdp_set_screen8                   
+     00000BF0  _vdp_set_screen0                   
+     00000CB7  _unpackScreen                      
+     00000D47  __divuint                          
+     00000D4F  __divuchar                         
+     00000D56  __divu8                            
+     00000D59  __divu16                           
+     00000D88  __moduchar                         
+     00000D94  __moduint                          
+ASxxxx Linker V03.00 + NoICE + sdld,  page 3.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_DATA                               00000D9F    00000018 =          24. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000D9F  _e                                 SCAMM
+     00000DB0  _book                              SCAMM
+     00000DB2  _lastBook                          SCAMM
+     00000DB4  _heap_top                          
+     00000DB6  _last_error                        
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 4.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_GSFINAL                            00000DB7    00000001 =           1. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 5.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_HEADER0                            00000000    00000006 =           6. bytes (ABS,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+ASxxxx Linker V03.00 + NoICE + sdld,  page 6.
+Hexadecimal  [32-Bits]
+
+Area                                    Addr        Size        Decimal Bytes (Attributes)
+--------------------------------        ----        ----        ------- ----- ------------
+_HEAP                               00000DB8    00000000 =           0. bytes (REL,CON)
+
+      Value  Global                              Global Defined In Module
+      -----  --------------------------------   ------------------------
+     00000DB8  _HEAP_start                        
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 7.
+
+Files Linked                              [ module(s) ]
+
+Release\objs\SCAMM.rel                    [ SCAMM ]
+Release\objs\crt0msx_msxdos_simple.rel    [  ]
+Release\objs\putchar.rel                  [  ]
+Release\objs\getchar.rel                  [  ]
+Release\objs\printf.rel                   [ printf ]
+Release\objs\types.rel                    [ types ]
+Release\objs\msxbiostools.rel             [  ]
+Release\objs\msxkeyboard.rel              [  ]
+Release\objs\dos2.rel                     [  ]
+Release\objs\scamm_vdp.rel                [  ]
+
+
+Libraries Linked                          [ object file ]
+
+C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
+                                          [ divunsigned.rel ]
+C:\Program Files\SDCC\bin\..\lib\z80/z80.lib
+                                          [ modunsigned.rel ]
+
+ASxxxx Linker V03.00 + NoICE + sdld,  page 8.
+
+User Base Address Definitions
+
+_CODE = 0x0106
+_DATA = 0x0000
+
+

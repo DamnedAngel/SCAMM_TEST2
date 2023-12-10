@@ -1,0 +1,43 @@
+﻿  -----------------------------------------------------------------------------------
+  MSX SDCC MAKEFILE by Danilo Angelo
+  -----------------------------------------------------------------------------------
+  Cleaning...
+  Done.
+  -----------------------------------------------------------------------------------
+  Building Target configuration defines...
+  Done.
+  -----------------------------------------------------------------------------------
+  Building libraries...
+  Processing ASM file ..\..\..\libs\msxdos\crt0msx_msxdos_simple.s... Done.
+  Processing ASM file ..\..\..\libs\util\putchar.s... Done.
+  Processing ASM file ..\..\..\libs\util\getchar.s... Done.
+  ..\..\..\libs\util\printf.c:144: warning 196: pointer target lost const qualifier
+  Processing C file ..\..\..\libs\util\printf.c... Done.
+  Processing C file ..\..\..\libs\util\types.c... Done.
+  Processing ASM file ..\..\..\libs\msx\msxbiostools.s... Done.
+  Processing ASM file ..\..\..\libs\msx\msxkeyboard.s... Done.
+  Processing ASM file ..\..\..\libs\msxdos\dos2.s... Done.
+  -----------------------------------------------------------------------------------
+  Building assembler modules...
+  1Processing ASM file scamm_vdp.s... Done.
+  -----------------------------------------------------------------------------------
+  Compiling...
+  sdcc --code-loc 0x106 --data-loc 0 -mz80 --no-std-crt0  Release\objs\crt0msx_msxdos_simple.rel Release\objs\putchar.rel Release\objs\getchar.rel Release\objs\printf.rel Release\objs\types.rel Release\objs\msxbiostools.rel Release\objs\msxkeyboard.rel Release\objs\dos2.rel Release\objs\scamm_vdp.rel -I. -I..\..\..\libs\msx -I..\..\..\libs\msxdos -I..\..\..\libs\util SCAMM.c -o Release\objs\
+  hex2bin v2.5, Copyright (C) 2017 Jacques Pelletier & contributors
+  
+  Allocate_Memory_and_Rewind:
+  Lowest address:   00000100
+  Highest address:  00000DB7
+  Starting address: 00000100
+  Max Length:       3256
+  
+  Binary file start = 00000100
+  Records start     = 00000100
+  Highest address   = 00000DB7
+  Pad Byte          = FF
+          1 file(s) copied.
+  Done.
+  -----------------------------------------------------------------------------------
+  Building Symbol file...
+  Done.
+  -----------------------------------------------------------------------------------

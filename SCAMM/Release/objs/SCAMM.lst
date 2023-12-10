@@ -1,0 +1,418 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : free open source ANSI-C Compiler
+                              3 ; Version 3.6.0 #9615 (MINGW64)
+                              4 ;--------------------------------------------------------
+                              5 	.module SCAMM
+                              6 	.optsdcc -mz80
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _runGame
+                             13 	.globl _loadScreen
+                             14 	.globl _loadGame
+                             15 	.globl _loadConf
+                             16 	.globl _testmsx2
+                             17 	.globl _unpackScreen
+                             18 	.globl _vdp_set_screen0
+                             19 	.globl _vdp_set_screen8
+                             20 	.globl _vdp_enable_screen_and_interrupts
+                             21 	.globl _vdp_disable_screen_and_interrupts
+                             22 	.globl _vdp_sprite_enable
+                             23 	.globl _vdp_sprite_disable
+                             24 	.globl _exit
+                             25 	.globl _read
+                             26 	.globl _close
+                             27 	.globl _open
+                             28 	.globl _keyboard_chget
+                             29 	.globl _readFromMainROM
+                             30 	.globl _printf
+                             31 	.globl _lastBook
+                             32 	.globl _book
+                             33 	.globl _e
+                             34 ;--------------------------------------------------------
+                             35 ; special function registers
+                             36 ;--------------------------------------------------------
+                             37 ;--------------------------------------------------------
+                             38 ; ram data
+                             39 ;--------------------------------------------------------
+                             40 	.area _DATA
+   0000                      41 _e::
+   0000                      42 	.ds 17
+   0011                      43 _book::
+   0011                      44 	.ds 2
+   0013                      45 _lastBook::
+   0013                      46 	.ds 2
+                             47 ;--------------------------------------------------------
+                             48 ; ram data
+                             49 ;--------------------------------------------------------
+                             50 	.area _INITIALIZED
+                             51 ;--------------------------------------------------------
+                             52 ; absolute external ram data
+                             53 ;--------------------------------------------------------
+                             54 	.area _DABS (ABS)
+                             55 ;--------------------------------------------------------
+                             56 ; global & static initialisations
+                             57 ;--------------------------------------------------------
+                             58 	.area _HOME
+                             59 	.area _GSINIT
+                             60 	.area _GSFINAL
+                             61 	.area _GSINIT
+                             62 ;--------------------------------------------------------
+                             63 ; Home
+                             64 ;--------------------------------------------------------
+                             65 	.area _HOME
+                             66 	.area _HOME
+                             67 ;--------------------------------------------------------
+                             68 ; code
+                             69 ;--------------------------------------------------------
+                             70 	.area _CODE
+                             71 ;SCAMM.c:33: uint8_t testmsx2() {
+                             72 ;	---------------------------------
+                             73 ; Function testmsx2
+                             74 ; ---------------------------------
+   0000                      75 _testmsx2::
+   0000 3B            [ 6]   76 	dec	sp
+                             77 ;SCAMM.c:34: return readFromMainROM(BIOS_HWVER) >= 1 ? ERR_SUCCESS : ERR_NO_MSX2;
+   0001 21 2D 00      [10]   78 	ld	hl,#0x002d
+   0004 E5            [11]   79 	push	hl
+   0005 CDr00r00      [17]   80 	call	_readFromMainROM
+   0008 F1            [10]   81 	pop	af
+   0009 7D            [ 4]   82 	ld	a,l
+   000A EE 80         [ 7]   83 	xor	a, #0x80
+   000C D6 81         [ 7]   84 	sub	a, #0x81
+   000E 38 04         [12]   85 	jr	C,00103$
+   0010 2E 00         [ 7]   86 	ld	l,#0x00
+   0012 18 02         [12]   87 	jr	00104$
+   0014                      88 00103$:
+   0014 2E 01         [ 7]   89 	ld	l,#0x01
+   0016                      90 00104$:
+   0016 33            [ 6]   91 	inc	sp
+   0017 C9            [10]   92 	ret
+                             93 ;SCAMM.c:37: uint8_t loadConf() {
+                             94 ;	---------------------------------
+                             95 ; Function loadConf
+                             96 ; ---------------------------------
+   0018                      97 _loadConf::
+                             98 ;SCAMM.c:38: return ERR_SUCCESS;
+   0018 2E 00         [ 7]   99 	ld	l,#0x00
+   001A C9            [10]  100 	ret
+                            101 ;SCAMM.c:41: uint8_t loadGame() {
+                            102 ;	---------------------------------
+                            103 ; Function loadGame
+                            104 ; ---------------------------------
+   001B                     105 _loadGame::
+                            106 ;SCAMM.c:42: return ERR_SUCCESS;
+   001B 2E 00         [ 7]  107 	ld	l,#0x00
+   001D C9            [10]  108 	ret
+                            109 ;SCAMM.c:45: uint8_t loadScreen() {
+                            110 ;	---------------------------------
+                            111 ; Function loadScreen
+                            112 ; ---------------------------------
+   001E                     113 _loadScreen::
+   001E DD E5         [15]  114 	push	ix
+   0020 DD 21 00 00   [14]  115 	ld	ix,#0
+   0024 DD 39         [15]  116 	add	ix,sp
+   0026 21 EF FF      [10]  117 	ld	hl,#-17
+   0029 39            [11]  118 	add	hl,sp
+   002A F9            [ 6]  119 	ld	sp,hl
+                            120 ;SCAMM.c:48: char fileName[15] = "book000.sca";
+   002B 21 00 00      [10]  121 	ld	hl,#0x0000
+   002E 39            [11]  122 	add	hl,sp
+   002F 4D            [ 4]  123 	ld	c,l
+   0030 44            [ 4]  124 	ld	b,h
+   0031 36 62         [10]  125 	ld	(hl),#0x62
+   0033 69            [ 4]  126 	ld	l, c
+   0034 60            [ 4]  127 	ld	h, b
+   0035 23            [ 6]  128 	inc	hl
+   0036 36 6F         [10]  129 	ld	(hl),#0x6f
+   0038 69            [ 4]  130 	ld	l, c
+   0039 60            [ 4]  131 	ld	h, b
+   003A 23            [ 6]  132 	inc	hl
+   003B 23            [ 6]  133 	inc	hl
+   003C 36 6F         [10]  134 	ld	(hl),#0x6f
+   003E 69            [ 4]  135 	ld	l, c
+   003F 60            [ 4]  136 	ld	h, b
+   0040 23            [ 6]  137 	inc	hl
+   0041 23            [ 6]  138 	inc	hl
+   0042 23            [ 6]  139 	inc	hl
+   0043 36 6B         [10]  140 	ld	(hl),#0x6b
+   0045 21 04 00      [10]  141 	ld	hl,#0x0004
+   0048 09            [11]  142 	add	hl,bc
+   0049 36 30         [10]  143 	ld	(hl),#0x30
+   004B 21 05 00      [10]  144 	ld	hl,#0x0005
+   004E 09            [11]  145 	add	hl,bc
+   004F 36 30         [10]  146 	ld	(hl),#0x30
+   0051 21 06 00      [10]  147 	ld	hl,#0x0006
+   0054 09            [11]  148 	add	hl,bc
+   0055 EB            [ 4]  149 	ex	de,hl
+   0056 3E 30         [ 7]  150 	ld	a,#0x30
+   0058 12            [ 7]  151 	ld	(de),a
+   0059 21 07 00      [10]  152 	ld	hl,#0x0007
+   005C 09            [11]  153 	add	hl,bc
+   005D 36 2E         [10]  154 	ld	(hl),#0x2e
+   005F 21 08 00      [10]  155 	ld	hl,#0x0008
+   0062 09            [11]  156 	add	hl,bc
+   0063 36 73         [10]  157 	ld	(hl),#0x73
+   0065 21 09 00      [10]  158 	ld	hl,#0x0009
+   0068 09            [11]  159 	add	hl,bc
+   0069 36 63         [10]  160 	ld	(hl),#0x63
+   006B 21 0A 00      [10]  161 	ld	hl,#0x000a
+   006E 09            [11]  162 	add	hl,bc
+   006F 36 61         [10]  163 	ld	(hl),#0x61
+   0071 21 0B 00      [10]  164 	ld	hl,#0x000b
+   0074 09            [11]  165 	add	hl,bc
+   0075 36 00         [10]  166 	ld	(hl),#0x00
+   0077 21 0C 00      [10]  167 	ld	hl,#0x000c
+   007A 09            [11]  168 	add	hl,bc
+   007B 36 00         [10]  169 	ld	(hl),#0x00
+   007D 21 0D 00      [10]  170 	ld	hl,#0x000d
+   0080 09            [11]  171 	add	hl,bc
+   0081 36 00         [10]  172 	ld	(hl),#0x00
+   0083 21 0E 00      [10]  173 	ld	hl,#0x000e
+   0086 09            [11]  174 	add	hl,bc
+   0087 36 00         [10]  175 	ld	(hl),#0x00
+                            176 ;SCAMM.c:49: fileName[6] = (char) (48 + book++);
+   0089 2Ar11r00      [16]  177 	ld	hl,(_book)
+   008C DD 75 FE      [19]  178 	ld	-2 (ix),l
+   008F DD 74 FF      [19]  179 	ld	-1 (ix),h
+   0092 FD 21r11r00   [14]  180 	ld	iy,#_book
+   0096 FD 34 00      [23]  181 	inc	0 (iy)
+   0099 20 03         [12]  182 	jr	NZ,00127$
+   009B FD 34 01      [23]  183 	inc	1 (iy)
+   009E                     184 00127$:
+   009E DD 7E FE      [19]  185 	ld	a,-2 (ix)
+   00A1 C6 30         [ 7]  186 	add	a, #0x30
+   00A3 12            [ 7]  187 	ld	(de),a
+                            188 ;SCAMM.c:50: if (book > lastBook) {
+   00A4 21r13r00      [10]  189 	ld	hl,#_lastBook
+   00A7 7E            [ 7]  190 	ld	a,(hl)
+   00A8 FD 96 00      [19]  191 	sub	a, 0 (iy)
+   00AB 23            [ 6]  192 	inc	hl
+   00AC 7E            [ 7]  193 	ld	a,(hl)
+   00AD FD 9E 01      [19]  194 	sbc	a, 1 (iy)
+   00B0 30 06         [12]  195 	jr	NC,00102$
+                            196 ;SCAMM.c:51: book = 0;
+   00B2 21 00 00      [10]  197 	ld	hl,#0x0000
+   00B5 22r11r00      [16]  198 	ld	(_book),hl
+   00B8                     199 00102$:
+                            200 ;SCAMM.c:55: hFile = open(fileName, 0);
+   00B8 AF            [ 4]  201 	xor	a, a
+   00B9 F5            [11]  202 	push	af
+   00BA 33            [ 6]  203 	inc	sp
+   00BB C5            [11]  204 	push	bc
+   00BC CDr00r00      [17]  205 	call	_open
+   00BF F1            [10]  206 	pop	af
+   00C0 33            [ 6]  207 	inc	sp
+   00C1 45            [ 4]  208 	ld	b,l
+                            209 ;SCAMM.c:56: if (hFile == -1) {
+   00C2 78            [ 4]  210 	ld	a,b
+   00C3 3C            [ 4]  211 	inc	a
+   00C4 20 04         [12]  212 	jr	NZ,00104$
+                            213 ;SCAMM.c:57: return ERR_NO_FILEOPEN;
+   00C6 2E 02         [ 7]  214 	ld	l,#0x02
+   00C8 18 2E         [12]  215 	jr	00109$
+   00CA                     216 00104$:
+                            217 ;SCAMM.c:60: size = read(hFile, (void *) CHAPTER_START, 0x5000);
+   00CA C5            [11]  218 	push	bc
+   00CB 21 00 50      [10]  219 	ld	hl,#0x5000
+   00CE E5            [11]  220 	push	hl
+   00CF 26 80         [ 7]  221 	ld	h, #0x80
+   00D1 E5            [11]  222 	push	hl
+   00D2 C5            [11]  223 	push	bc
+   00D3 33            [ 6]  224 	inc	sp
+   00D4 CDr00r00      [17]  225 	call	_read
+   00D7 F1            [10]  226 	pop	af
+   00D8 F1            [10]  227 	pop	af
+   00D9 33            [ 6]  228 	inc	sp
+   00DA C1            [10]  229 	pop	bc
+                            230 ;SCAMM.c:61: if (last_error) {
+   00DB 3Ar00r00      [13]  231 	ld	a,(#_last_error + 0)
+   00DE B7            [ 4]  232 	or	a, a
+   00DF 28 04         [12]  233 	jr	Z,00106$
+                            234 ;SCAMM.c:62: return ERR_NO_FILEREAD;
+   00E1 2E 04         [ 7]  235 	ld	l,#0x04
+   00E3 18 13         [12]  236 	jr	00109$
+   00E5                     237 00106$:
+                            238 ;SCAMM.c:65: unpackScreen();
+   00E5 C5            [11]  239 	push	bc
+   00E6 CDr00r00      [17]  240 	call	_unpackScreen
+   00E9 33            [ 6]  241 	inc	sp
+   00EA CDr00r00      [17]  242 	call	_close
+   00ED 33            [ 6]  243 	inc	sp
+   00EE 7D            [ 4]  244 	ld	a,l
+   00EF B7            [ 4]  245 	or	a, a
+   00F0 28 04         [12]  246 	jr	Z,00108$
+                            247 ;SCAMM.c:68: return ERR_NO_FILECLOSE;
+   00F2 2E 03         [ 7]  248 	ld	l,#0x03
+   00F4 18 02         [12]  249 	jr	00109$
+   00F6                     250 00108$:
+                            251 ;SCAMM.c:70: return ERR_SUCCESS;
+   00F6 2E 00         [ 7]  252 	ld	l,#0x00
+   00F8                     253 00109$:
+   00F8 DD F9         [10]  254 	ld	sp, ix
+   00FA DD E1         [14]  255 	pop	ix
+   00FC C9            [10]  256 	ret
+                            257 ;SCAMM.c:73: uint8_t runGame() {
+                            258 ;	---------------------------------
+                            259 ; Function runGame
+                            260 ; ---------------------------------
+   00FD                     261 _runGame::
+                            262 ;SCAMM.c:74: uint8_t err = ERR_SUCCESS;
+                            263 ;SCAMM.c:76: key = 0;
+   00FD 01 00 00      [10]  264 	ld	bc,#0x0000
+                            265 ;SCAMM.c:77: book = 0;
+   0100 21 00 00      [10]  266 	ld	hl,#0x0000
+   0103 22r11r00      [16]  267 	ld	(_book),hl
+                            268 ;SCAMM.c:78: lastBook = 1;
+   0106 2E 01         [ 7]  269 	ld	l, #0x01
+   0108 22r13r00      [16]  270 	ld	(_lastBook),hl
+                            271 ;SCAMM.c:80: while ((key != 27) && (!err))
+   010B                     272 00102$:
+   010B 78            [ 4]  273 	ld	a,b
+   010C D6 1B         [ 7]  274 	sub	a, #0x1b
+   010E 28 16         [12]  275 	jr	Z,00104$
+   0110 79            [ 4]  276 	ld	a,c
+   0111 B7            [ 4]  277 	or	a, a
+   0112 20 12         [12]  278 	jr	NZ,00104$
+                            279 ;SCAMM.c:82: vdp_disable_screen_and_interrupts();
+   0114 CDr00r00      [17]  280 	call	_vdp_disable_screen_and_interrupts
+                            281 ;SCAMM.c:83: err = loadScreen();
+   0117 CDr1Er00      [17]  282 	call	_loadScreen
+   011A 4D            [ 4]  283 	ld	c,l
+                            284 ;SCAMM.c:84: vdp_enable_screen_and_interrupts();
+   011B C5            [11]  285 	push	bc
+   011C CDr00r00      [17]  286 	call	_vdp_enable_screen_and_interrupts
+   011F CDr00r00      [17]  287 	call	_keyboard_chget
+   0122 C1            [10]  288 	pop	bc
+   0123 45            [ 4]  289 	ld	b,l
+   0124 18 E5         [12]  290 	jr	00102$
+   0126                     291 00104$:
+                            292 ;SCAMM.c:88: return err;
+   0126 69            [ 4]  293 	ld	l,c
+   0127 C9            [10]  294 	ret
+                            295 ;SCAMM.c:91: void main(void) {
+                            296 ;	---------------------------------
+                            297 ; Function main
+                            298 ; ---------------------------------
+   0128                     299 _main::
+                            300 ;SCAMM.c:94: printf("SCAMM started.\r\n");
+   0128 21r95r01      [10]  301 	ld	hl,#___str_1
+   012B E5            [11]  302 	push	hl
+   012C CDr00r00      [17]  303 	call	_printf
+                            304 ;SCAMM.c:95: printf("Testing for MSX2... ");
+   012F 21rA6r01      [10]  305 	ld	hl, #___str_2
+   0132 E3            [19]  306 	ex	(sp),hl
+   0133 CDr00r00      [17]  307 	call	_printf
+   0136 F1            [10]  308 	pop	af
+                            309 ;SCAMM.c:96: err = testmsx2();
+   0137 CDr00r00      [17]  310 	call	_testmsx2
+                            311 ;SCAMM.c:97: if (!err) {
+   013A 7D            [ 4]  312 	ld	a,l
+   013B B7            [ 4]  313 	or	a, a
+   013C 20 45         [12]  314 	jr	NZ,00106$
+                            315 ;SCAMM.c:98: printf("Ok.\r\n");
+   013E 21rBBr01      [10]  316 	ld	hl,#___str_3
+   0141 E5            [11]  317 	push	hl
+   0142 CDr00r00      [17]  318 	call	_printf
+                            319 ;SCAMM.c:99: printf("Loading game configuration file... ");
+   0145 21rC1r01      [10]  320 	ld	hl, #___str_4
+   0148 E3            [19]  321 	ex	(sp),hl
+   0149 CDr00r00      [17]  322 	call	_printf
+   014C F1            [10]  323 	pop	af
+                            324 ;SCAMM.c:100: err = loadConf();
+   014D CDr18r00      [17]  325 	call	_loadConf
+                            326 ;SCAMM.c:101: if (!err) {
+   0150 7D            [ 4]  327 	ld	a,l
+   0151 B7            [ 4]  328 	or	a, a
+   0152 20 2F         [12]  329 	jr	NZ,00106$
+                            330 ;SCAMM.c:102: printf("Ok.\r\n");
+   0154 21rBBr01      [10]  331 	ld	hl,#___str_3
+   0157 E5            [11]  332 	push	hl
+   0158 CDr00r00      [17]  333 	call	_printf
+                            334 ;SCAMM.c:103: printf("Loading game file... ");
+   015B 21rE5r01      [10]  335 	ld	hl, #___str_5
+   015E E3            [19]  336 	ex	(sp),hl
+   015F CDr00r00      [17]  337 	call	_printf
+   0162 F1            [10]  338 	pop	af
+                            339 ;SCAMM.c:104: err = loadGame();
+   0163 CDr1Br00      [17]  340 	call	_loadGame
+                            341 ;SCAMM.c:105: if (!err) {
+   0166 7D            [ 4]  342 	ld	a,l
+   0167 B7            [ 4]  343 	or	a, a
+   0168 20 19         [12]  344 	jr	NZ,00106$
+                            345 ;SCAMM.c:106: printf("Ok.\r\n");
+   016A 21rBBr01      [10]  346 	ld	hl,#___str_3
+   016D E5            [11]  347 	push	hl
+   016E CDr00r00      [17]  348 	call	_printf
+   0171 F1            [10]  349 	pop	af
+                            350 ;SCAMM.c:107: vdp_set_screen8();
+   0172 CDr00r00      [17]  351 	call	_vdp_set_screen8
+                            352 ;SCAMM.c:108: vdp_sprite_disable();
+   0175 CDr00r00      [17]  353 	call	_vdp_sprite_disable
+                            354 ;SCAMM.c:110: err = runGame();
+   0178 CDrFDr00      [17]  355 	call	_runGame
+                            356 ;SCAMM.c:111: vdp_sprite_enable();
+   017B E5            [11]  357 	push	hl
+   017C CDr00r00      [17]  358 	call	_vdp_sprite_enable
+   017F CDr00r00      [17]  359 	call	_vdp_set_screen0
+   0182 E1            [10]  360 	pop	hl
+   0183                     361 00106$:
+                            362 ;SCAMM.c:120: printf("You've been SCAMMed!\r\n");
+   0183 01rFBr01      [10]  363 	ld	bc,#___str_6+0
+   0186 E5            [11]  364 	push	hl
+   0187 C5            [11]  365 	push	bc
+   0188 CDr00r00      [17]  366 	call	_printf
+   018B F1            [10]  367 	pop	af
+   018C E1            [10]  368 	pop	hl
+                            369 ;SCAMM.c:121: exit(err);
+   018D 7D            [ 4]  370 	ld	a,l
+   018E F5            [11]  371 	push	af
+   018F 33            [ 6]  372 	inc	sp
+   0190 CDr00r00      [17]  373 	call	_exit
+   0193 33            [ 6]  374 	inc	sp
+   0194 C9            [10]  375 	ret
+   0195                     376 ___str_1:
+   0195 53 43 41 4D 4D 20   377 	.ascii "SCAMM started."
+        73 74 61 72 74 65
+        64 2E
+   01A3 0D                  378 	.db 0x0d
+   01A4 0A                  379 	.db 0x0a
+   01A5 00                  380 	.db 0x00
+   01A6                     381 ___str_2:
+   01A6 54 65 73 74 69 6E   382 	.ascii "Testing for MSX2... "
+        67 20 66 6F 72 20
+        4D 53 58 32 2E 2E
+        2E 20
+   01BA 00                  383 	.db 0x00
+   01BB                     384 ___str_3:
+   01BB 4F 6B 2E            385 	.ascii "Ok."
+   01BE 0D                  386 	.db 0x0d
+   01BF 0A                  387 	.db 0x0a
+   01C0 00                  388 	.db 0x00
+   01C1                     389 ___str_4:
+   01C1 4C 6F 61 64 69 6E   390 	.ascii "Loading game configuration file... "
+        67 20 67 61 6D 65
+        20 63 6F 6E 66 69
+        67 75 72 61 74 69
+        6F 6E 20 66 69 6C
+        65 2E 2E 2E 20
+   01E4 00                  391 	.db 0x00
+   01E5                     392 ___str_5:
+   01E5 4C 6F 61 64 69 6E   393 	.ascii "Loading game file... "
+        67 20 67 61 6D 65
+        20 66 69 6C 65 2E
+        2E 2E 20
+   01FA 00                  394 	.db 0x00
+   01FB                     395 ___str_6:
+   01FB 59 6F 75 27 76 65   396 	.ascii "You've been SCAMMed!"
+        20 62 65 65 6E 20
+        53 43 41 4D 4D 65
+        64 21
+   020F 0D                  397 	.db 0x0d
+   0210 0A                  398 	.db 0x0a
+   0211 00                  399 	.db 0x00
+                            400 	.area _CODE
+                            401 	.area _INITIALIZER
+                            402 	.area _CABS (ABS)

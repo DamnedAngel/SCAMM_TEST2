@@ -1,0 +1,164 @@
+﻿  -----------------------------------------------------------------------------------
+  MSX SDCC MAKEFILE by Danilo Angelo
+  -----------------------------------------------------------------------------------
+  Cleaning...
+  Done.
+  -----------------------------------------------------------------------------------
+  Building Target configuration defines...
+  Done.
+  -----------------------------------------------------------------------------------
+  Compiling Zoo Package Source...
+  Generating Z80 OO library for: ..\..\..\libs\zoo\framework\Bitmap.xls, ..\..\..\libs\zoo\framework\MSX\VDP9938.xml, ..\..\..\libs\zoo\framework\Panel.xls
+  Reflection Level: inheritance
+  Verbose: True
+  Wait for key press: False
+  Output File: zoo.package
+  Output Directory: Debug\objs
+  Zoo Directory: ..\..\..\libs\zoo
+  ---------------------------------------------------------------------------------------
+  Pass 1 (Parsing) started.
+  Processing class Bitmap... 
+    Current path: I:/Emulator/MSX/DEV/libs/zoo/framework
+    Current file: Bitmap.xml
+    XML file found.
+    XSD file found.
+    XML Validated against schema.
+    [Bitmap]Class name validated.
+    [Bitmap]New class.
+    [Bitmap]WARNING: Reference(dependency) file VDP9938 does not exist!
+    [Bitmap]Added reference(dependency) VDP9938.
+    [Bitmap]Added EQU VRAMBMPFlag.
+    [Bitmap]Added EQU TransparentFlag.
+    [Bitmap]Parent class Control detected.
+    Processing class Control... 
+      Current path: I:/Emulator/MSX/DEV/libs/zoo/framework
+      Current file: Control.xml
+      XML file found.
+      XSD file found.
+      XML Validated against schema.
+      [Control]Class name validated.
+      [Control]New class.
+      [Control]Added EQU FLAG_ACTIVE.
+      [Control]Added EQU FLAG_VISIBLE.
+      [Control]Undefined parent. Zoo's Object class assumed.
+      Processing class Object... 
+        Current path: I:/Emulator/MSX/DEV/libs/zoo/framework
+        Current file: Object.xml
+        XML file found.
+        XSD file found.
+        XML Validated against schema.
+        [Object]Class name validated.
+        [Object]New class.
+        [Object]Base Object class detected. No parent applicable.
+      [Control]Parent method Constructor inherited.
+      [Control]Parent method Destructor inherited.
+      [Control]Ended processing parent class Object.
+    [Bitmap]Parent property Flags inherited.
+    [Bitmap]Parent property X inherited.
+    [Bitmap]Parent property Y inherited.
+    [Bitmap]Parent property Width inherited.
+    [Bitmap]Parent property Height inherited.
+    [Bitmap]Parent method Constructor inherited.
+    [Bitmap]Parent method Destructor inherited.
+    [Bitmap]Parent method OnPaint inherited.
+    [Bitmap]Parent method Paint inherited.
+    [Bitmap]Ended processing parent class Control.
+  Processing class VDP9938... 
+    Current path: I:/Emulator/MSX/DEV/libs/zoo/framework/MSX
+    Current file: VDP9938.xml
+    XML file found.
+    XSD file found.
+    XML Validated against schema.
+    [VDP9938]Class name validated.
+    [VDP9938]New class.
+    [VDP9938]Added EQU COMMAND_STOP.
+    [VDP9938]Added EQU COMMAND_POINT.
+    [VDP9938]Added EQU COMMAND_PSET.
+    [VDP9938]Added EQU COMMAND_SRCH.
+    [VDP9938]Added EQU COMMAND_LINE.
+    [VDP9938]Added EQU COMMAND_LMMV.
+    [VDP9938]Added EQU COMMAND_LMMM.
+    [VDP9938]Added EQU COMMAND_LMCM.
+    [VDP9938]Added EQU COMMAND_LMMC.
+    [VDP9938]Added EQU COMMAND_HMMV.
+    [VDP9938]Added EQU COMMAND_HMMM.
+    [VDP9938]Added EQU COMMAND_YMMM.
+    [VDP9938]Added EQU COMMAND_HMMC.
+    [VDP9938]Added EQU OPERATION_IMP.
+    [VDP9938]Added EQU OPERATION_AND.
+    [VDP9938]Added EQU OPERATION_OR.
+    [VDP9938]Added EQU OPERATION_XOR.
+    [VDP9938]Added EQU OPERATION_NOT.
+    [VDP9938]Added EQU OPERATION_TIMP.
+    [VDP9938]Added EQU OPERATION_TAND.
+    [VDP9938]Added EQU OPERATION_TOR.
+    [VDP9938]Added EQU OPERATION_TXOR.
+    [VDP9938]Added EQU OPERATION_TNOT.
+    [VDP9938]Parent class VDP detected.
+    Processing class VDP... 
+      Current path: I:/Emulator/MSX/DEV/libs/zoo/framework/MSX
+      Current file: VDP.xml
+      XML file found.
+      XSD file found.
+      XML Validated against schema.
+      [VDP]Class name validated.
+      [VDP]New class.
+      [VDP]Added reference(include) msxbios.s.
+      [VDP]Added EQU PORT_0.
+      [VDP]Added EQU PORT_1.
+      [VDP]Added EQU PORT_2.
+      [VDP]Added EQU PORT_3.
+      [VDP]Undefined parent. Zoo's Object class assumed.
+      Class Object found.
+      [VDP]Parent method Constructor inherited.
+      [VDP]Parent method Destructor inherited.
+      [VDP]Ended processing parent class Object.
+    [VDP9938]Parent method Constructor inherited.
+    [VDP9938]Parent method Destructor inherited.
+    [VDP9938]Parent smethod SColor inherited.
+    [VDP9938]Parent smethod RColor inherited.
+    [VDP9938]Parent smethod BColor inherited.
+    [VDP9938]Parent smethod SScreen inherited.
+    [VDP9938]Parent smethod RScreen inherited.
+    [VDP9938]Ended processing parent class VDP.
+  Processing class Panel... 
+    Current path: I:/Emulator/MSX/DEV/libs/zoo/framework
+    Current file: Panel.xml
+    XML file found.
+    XSD file found.
+    XML Validated against schema.
+    [Panel]Class name validated.
+    [Panel]New class.
+    [Panel]WARNING: Reference(dependency) file VDP9938 does not exist!
+    [Panel]Added reference(dependency) VDP9938.
+    [Panel]Parent class Control detected.
+    Class Control found.
+    [Panel]Parent property Flags inherited.
+    [Panel]Parent property X inherited.
+    [Panel]Parent property Y inherited.
+    [Panel]Parent property Width inherited.
+    [Panel]Parent property Height inherited.
+    [Panel]Parent method Constructor inherited.
+    [Panel]Parent method Destructor inherited.
+    [Panel]Parent method OnPaint inherited.
+    [Panel]Parent method Paint inherited.
+    [Panel]Ended processing parent class Control.
+  
+  Pass 2 (Code Generation) started.
+  
+  Pass 3 (Assembly) started.
+  
+  Pass 4 (Library building) started.
+  sdasz80 -I..\..\..\libs\zoo\engine -I..\..\..\libs\z80 -ols Debug\objs\zoo.package.s
+  Done.
+  -----------------------------------------------------------------------------------
+  Building libraries...
+  Processing ASM file ..\..\..\libs\util\math_8bitmultiplication.s... Done.
+  Processing ASM file ..\..\..\libs\util\math_16bitmultiplication.s... Done.
+  Processing ASM file ..\..\..\libs\msx\msxbiostools.s... Done.
+  Processing ASM file ..\..\..\libs\msx\msxkeyboard.s... Done.
+  Processing ASM file ..\..\..\libs\msx\msxinterrupt.s... removing 
+  ?ASxxxx-Error-<cannot open> : "..\..\..\libs\msx\msxinterrupt.s"
+  FAIL
+  Failed building [MSX_LIB_PATH]\msx\msxinterrupt.s
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MakeFile.Targets(54,5): error MSB3073: The command "make Debug SCAMM clean all" exited with code 3.

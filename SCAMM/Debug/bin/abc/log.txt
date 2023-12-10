@@ -1,0 +1,7 @@
+SCAMM started.
+Testing for MSX2... Ok.
+Loading game configuration file... Ok.
+Loading game file... Ok.
+[DEBUG] Opening font.sca.
+[DEBUG] Opening book000.sca.
+You've been SCAMMed!

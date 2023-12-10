@@ -1,0 +1,294 @@
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 1.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    .__.$$$.=  002710 L   |     .__.ABS.=  000000 G   |     .__.CPU.=  000000 L
+    .__.H$L.=  000000 L   |     BIOS_ACP=  00FAF6     |     BIOS_ARG=  00F847 
+    BIOS_ARY=  00F7B5     |     BIOS_ARY=  00F6C4     |     BIOS_ASP=  00F40B 
+    BIOS_ASP=  00F40D     |     BIOS_ASP=  00F931     |     BIOS_ATR=  00F928 
+    BIOS_ATR=  00F3F2     |     BIOS_AUT=  00F6AA     |     BIOS_AUT=  00F6AD 
+    BIOS_AUT=  00F6AB     |     BIOS_AVC=  00FAF7     |     BIOS_BAK=  00F3EA 
+    BIOS_BAS=  00FBB1     |     BIOS_BDR=  00F3EB     |     BIOS_BEE=  0000C0 
+    BIOS_BOT=  00FC48     |     BIOS_BRD=  00FCB2     |     BIOS_BRE=  0000B7 
+    BIOS_BUF=  00F55E     |     BIOS_BUF=  00F55D     |     BIOS_CAL=  000087 
+    BIOS_CAL=  000159     |     BIOS_CAL=  000030     |     BIOS_CAL=  000084 
+    BIOS_CAL=  00001C     |     BIOS_CAP=  00FCAB     |     BIOS_CAS=  00FCB1 
+    BIOS_CEN=  00F933     |     BIOS_CGP=  00F924     |     BIOS_CGP=  00F91F 
+    BIOS_CHG=  000132     |     BIOS_CHG=  000062     |     BIOS_CHG=  00009F 
+    BIOS_CHG=  0001B5     |     BIOS_CHG=  00005F     |     BIOS_CHG=  000135 
+    BIOS_CHK=  000000     |     BIOS_CHP=  0000A2     |     BIOS_CHR=  00FAF9 
+    BIOS_CHR=  000010     |     BIOS_CHS=  00009C     |     BIOS_CLI=  00FBD9 
+    BIOS_CLI=  00F3DB     |     BIOS_CLI=  00F935     |     BIOS_CLM=  00F3B2 
+    BIOS_CLO=  00F92A     |     BIOS_CLP=  00F38C     |     BIOS_CLR=  000069 
+    BIOS_CLS=  0000C3     |     BIOS_CLS=  000115     |     BIOS_CMA=  00F92C 
+    BIOS_CNP=  00F936     |     BIOS_CNS=  00F3DE     |     BIOS_CNV=  0000AB 
+    BIOS_COD=  00FBCC     |     BIOS_COM=  00FB1E     |     BIOS_CON=  00F66A 
+    BIOS_CON=  00F668     |     BIOS_CON=  00F666     |     BIOS_CON=  00F669 
+    BIOS_CPC=  00F939     |     BIOS_CPC=  00F93D     |     BIOS_CPL=  00F938 
+    BIOS_CPN=  00F93B     |     BIOS_CRT=  00F3B1     |     BIOS_CS1=  00F3FC 
+    BIOS_CSA=  00F942     |     BIOS_CSA=  00F944     |     BIOS_CSC=  00F941 
+    BIOS_CSR=  00FCA9     |     BIOS_CSR=  00F3DD     |     BIOS_CSR=  00F3DC 
+    BIOS_CST=  00F93F     |     BIOS_CST=  00FCAA     |     BIOS_CUR=  00F41C 
+    BIOS_CXO=  00F945     |     BIOS_CYO=  00F947     |     BIOS_DAC=  00F7F6 
+    BIOS_DAT=  00FB18     |     BIOS_DAT=  00F6C8     |     BIOS_DCO=  000020 
+    BIOS_DEC=  00F7F4     |     BIOS_DEC=  00F7F2     |     BIOS_DEC=  00F7F0 
+    BIOS_DEF=  00F6CA     |     BIOS_DEV=  00FD99     |     BIOS_DEV=  00FB17 
+    BIOS_DIM=  00F662     |     BIOS_DIS=  00FFCF     |     BIOS_DIS=  000041 
+    BIOS_DON=  00F665     |     BIOS_DOR=  00F664     |     BIOS_DOT=  00F6B5 
+    BIOS_DPP=  00FAF5     |     BIOS_DRW=  00FCBD     |     BIOS_DRW=  00FCBB 
+    BIOS_DRW=  00FCBC     |     BIOS_DSC=  00F698     |     BIOS_DSP=  0000CF 
+    BIOS_ENA=  00FFD4     |     BIOS_ENA=  000044     |     BIOS_ENA=  000024 
+    BIOS_END=  00F660     |     BIOS_END=  00F6A1     |     BIOS_END=  00F40F 
+    BIOS_ENS=  00FBB0     |     BIOS_EOL=  000168     |     BIOS_ERA=  0000CC 
+    BIOS_ERR=  00F414     |     BIOS_ERR=  00F6B3     |     BIOS_ERR=  00FB1B 
+    BIOS_ERR=  00F6B7     |     BIOS_ESC=  00FCA7     |     BIOS_EST=  00FB1D 
+    BIOS_EXB=  00FAF8     |     BIOS_EXP=  00FCC1     |     BIOS_EXT=  00015F 
+    BIOS_FBU=  00F7C5     |     BIOS_FCA=  00FFCA     |     BIOS_FIL=  00F866 
+    BIOS_FIL=  00F871     |     BIOS_FIL=  00F860     |     BIOS_FIL=  000056 
+    BIOS_FLA=  00FB1C     |     BIOS_FLB=  00FCAE     |     BIOS_FLG=  00F6A6 
+    BIOS_FNK=  00FBCE     |     BIOS_FNK=  0000C9     |     BIOS_FNK=  00F87F 
+    BIOS_FNK=  00FBCD     |     BIOS_FOR=  00F3E9     |     BIOS_FRC=  00F3F5 
+    BIOS_FRE=  00F69B     |     BIOS_FST=  00FBCA     |     BIOS_FUN=  00F7BA 
+    BIOS_GET=  000149     |     BIOS_GET=  00F3FA     |     BIOS_GET=  000028 
+    BIOS_GIC=  000090     |     BIOS_GRP=  00FCB7     |     BIOS_GRP=  00FCB9 
+    BIOS_GRP=  00F3CD     |     BIOS_GRP=  00F3CB     |     BIOS_GRP=  00F3C9 
+    BIOS_GRP=  00FCA6     |     BIOS_GRP=  00F3C7     |     BIOS_GRP=  00F3CF 
+    BIOS_GRP=  00008D     |     BIOS_GRP=  000089     |     BIOS_GSP=  00008A 
+    BIOS_GTP=  0000DB     |     BIOS_GTP=  0000DE     |     BIOS_GTS=  0000D5 
+    BIOS_GTT=  0000D8     |     BIOS_GXP=  00FCB3     |     BIOS_GYP=  00FCB5 
+    BIOS_HEA=  00F40A     |     BIOS_HIG=  00F408     |     BIOS_HIM=  00FC4A 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 2.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    BIOS_HOL=  00F83E     |     BIOS_HOL=  00F836     |     BIOS_HOL=  00F806 
+    BIOS_HWL=  00002B     |     BIOS_HWL=  00002C     |     BIOS_HWM=  00002E 
+    BIOS_HWV=  00002D     |     BIOS_H_A=  00FE1C     |     BIOS_H_B=  00FEAD 
+    BIOS_H_B=  00FE76     |     BIOS_H_B=  00FE71     |     BIOS_H_B=  00FF8E 
+    BIOS_H_C=  00FDC2     |     BIOS_H_C=  00FDA4     |     BIOS_H_C=  00FF48 
+    BIOS_H_C=  00FED0     |     BIOS_H_C=  00FE0D     |     BIOS_H_C=  00FF57 
+    BIOS_H_C=  00FE08     |     BIOS_H_C=  00FEE9     |     BIOS_H_C=  00FF20 
+    BIOS_H_C=  00FF25     |     BIOS_H_C=  00FE49     |     BIOS_H_C=  00FE3F 
+    BIOS_H_C=  00FE44     |     BIOS_H_D=  00FEC1     |     BIOS_H_D=  00FE80 
+    BIOS_H_D=  00FF11     |     BIOS_H_D=  00FEF3     |     BIOS_H_D=  00FEEE 
+    BIOS_H_D=  00FE12     |     BIOS_H_D=  00FE17     |     BIOS_H_D=  00FDEF 
+    BIOS_H_D=  00FDA9     |     BIOS_H_D=  00FDB3     |     BIOS_H_E=  00FEA3 
+    BIOS_H_E=  00FDAE     |     BIOS_H_E=  00FDB8     |     BIOS_H_E=  00FF02 
+    BIOS_H_E=  00FFB1     |     BIOS_H_E=  00FEFD     |     BIOS_H_E=  00FF70 
+    BIOS_H_F=  00FE2B     |     BIOS_H_F=  00FD7B     |     BIOS_H_F=  00FE85 
+    BIOS_H_F=  00FF1B     |     BIOS_H_F=  00FF7A     |     BIOS_H_F=  00FF16 
+    BIOS_H_F=  00FF5C     |     BIOS_H_F=  00FFAC     |     BIOS_H_F=  00FEA8 
+    BIOS_H_F=  00FF9D     |     BIOS_H_F=  00FF66     |     BIOS_H_F=  00FF93 
+    BIOS_H_G=  00FEC6     |     BIOS_H_G=  00FE4E     |     BIOS_H_G=  00FF43 
+    BIOS_H_I=  00FE8A     |     BIOS_H_I=  00FDC7     |     BIOS_H_I=  00FDE5 
+    BIOS_H_I=  00FE03     |     BIOS_H_I=  00FEDF     |     BIOS_H_I=  00FF7F 
+    BIOS_H_I=  00FF2A     |     BIOS_H_K=  00FDCC     |     BIOS_H_K=  00FD9A 
+    BIOS_H_K=  00FDFE     |     BIOS_H_K=  00FDD1     |     BIOS_H_L=  00FF89 
+    BIOS_H_L=  00FE99     |     BIOS_H_L=  00FE9E     |     BIOS_H_L=  00FED5 
+    BIOS_H_L=  00FFB6     |     BIOS_H_L=  00FFBB     |     BIOS_H_L=  00FE21 
+    BIOS_H_M=  00FF0C     |     BIOS_H_M=  00FE67     |     BIOS_H_M=  00FE3A 
+    BIOS_H_M=  00FE30     |     BIOS_H_M=  00FE35     |     BIOS_H_N=  00FDF9 
+    BIOS_H_N=  00FF3E     |     BIOS_H_N=  00FDD6     |     BIOS_H_N=  00FEB7 
+    BIOS_H_N=  00FE58     |     BIOS_H_N=  00FF34     |     BIOS_H_N=  00FE62 
+    BIOS_H_N=  00FF2F     |     BIOS_H_N=  00FF6B     |     BIOS_H_N=  00FE5D 
+    BIOS_H_O=  00FF75     |     BIOS_H_O=  00FDEA     |     BIOS_H_O=  00FEE4 
+    BIOS_H_P=  00FEB2     |     BIOS_H_P=  00FFA7     |     BIOS_H_P=  00FDDB 
+    BIOS_H_P=  00FFC5     |     BIOS_H_P=  00FEBC     |     BIOS_H_P=  00FEF8 
+    BIOS_H_P=  00FF52     |     BIOS_H_P=  00FFA2     |     BIOS_H_Q=  00FDE0 
+    BIOS_H_R=  00FF07     |     BIOS_H_R=  00FF4D     |     BIOS_H_R=  00FE26 
+    BIOS_H_R=  00FE8F     |     BIOS_H_R=  00FECB     |     BIOS_H_S=  00FE94 
+    BIOS_H_S=  00FE6C     |     BIOS_H_S=  00FF98     |     BIOS_H_S=  00FFC0 
+    BIOS_H_S=  00FE53     |     BIOS_H_S=  00FDF4     |     BIOS_H_S=  00FF39 
+    BIOS_H_S=  00FEDA     |     BIOS_H_T=  00FD9F     |     BIOS_H_T=  00FDBD 
+    BIOS_H_T=  00FF61     |     BIOS_H_W=  00FF84     |     BIOS_INI=  00003E 
+    BIOS_INI=  000072     |     BIOS_INI=  000075     |     BIOS_INI=  000141 
+    BIOS_INI=  00006F     |     BIOS_INI=  00003B     |     BIOS_INI=  00006C 
+    BIOS_INL=  0000B1     |     BIOS_INS=  00FCA8     |     BIOS_INT=  00FCA2 
+    BIOS_INT=  00FC9B     |     BIOS_INT=  00FCA0     |     BIOS_ISF=  00014A 
+    BIOS_JIF=  00FC9E     |     BIOS_KAN=  00FCAD     |     BIOS_KAN=  00FCAC 
+    BIOS_KBU=  00F41F     |     BIOS_KEY=  00FBF0     |     BIOS_KEY=  000038 
+    BIOS_KIL=  000156     |     BIOS_KNJ=  0001BD     |     BIOS_LDI=  000059 
+    BIOS_LDI=  00005C     |     BIOS_LFP=  00F954     |     BIOS_LIN=  00F3AF 
+    BIOS_LIN=  00F3AE     |     BIOS_LIN=  00F3B0     |     BIOS_LIN=  00FBB2 
+    BIOS_LIN=  00FC18     |     BIOS_LOG=  00FB02     |     BIOS_LOH=  00F94B 
+    BIOS_LOH=  00F94D     |     BIOS_LOH=  00F94A     |     BIOS_LOH=  00F949 
+    BIOS_LOW=  00F406     |     BIOS_LOW=  00FCA4     |     BIOS_LPT=  0000A5 
+    BIOS_LPT=  00F415     |     BIOS_LPT=  0000A8     |     BIOS_LST=  00FB1F 
+    BIOS_LST=  00FB20     |     BIOS_MAX=  00F92F     |     BIOS_MAX=  00F85F 
+    BIOS_MAX=  00F3EC     |     BIOS_MCL=  00F958     |     BIOS_MCL=  00FB3B 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 3.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    BIOS_MCL=  00FB3C     |     BIOS_MCL=  00F956     |     BIOS_MEM=  00F672 
+    BIOS_MEX=  00FB07     |     BIOS_MIN=  00F92D     |     BIOS_MIN=  00F3EF 
+    BIOS_MIV=  00F951     |     BIOS_MLT=  00F3D7     |     BIOS_MLT=  00F3D5 
+    BIOS_MLT=  00F3D3     |     BIOS_MLT=  00F3D1     |     BIOS_MLT=  00F3D9 
+    BIOS_MOD=  00FAFC     |     BIOS_MUS=  00FC3F     |     BIOS_NAM=  00F922 
+    BIOS_NEW=  00FBE5     |     BIOS_NEW=  0001AD     |     BIOS_NLO=  00F87C 
+    BIOS_NMI=  000066     |     BIOS_NOF=  00F7B7     |     BIOS_NOR=  00FAFD 
+    BIOS_NRD=  000174     |     BIOS_NSE=  00016E     |     BIOS_NST=  000171 
+    BIOS_NTM=  00F417     |     BIOS_NUL=  00F862     |     BIOS_NVB=  0000CD 
+    BIOS_NVB=  0000C9     |     BIOS_NWR=  000177     |     BIOS_OLD=  00FB12 
+    BIOS_OLD=  00FBDA     |     BIOS_OLD=  00F6BE     |     BIOS_OLD=  00FCB0 
+    BIOS_OLD=  00FB0C     |     BIOS_OLD=  00F6C0     |     BIOS_ONE=  00F6BB 
+    BIOS_ONE=  00F6B9     |     BIOS_ONG=  00FBD8     |     BIOS_OUT=  00014D 
+    BIOS_OUT=  000018     |     BIOS_PAD=  00FC9D     |     BIOS_PAD=  00FC9C 
+    BIOS_PAR=  00F6E8     |     BIOS_PAR=  00F750     |     BIOS_PAT=  00F926 
+    BIOS_PAT=  00FC40     |     BIOS_PDI=  00F953     |     BIOS_PHY=  000144 
+    BIOS_PIN=  0000AE     |     BIOS_PLY=  00FB40     |     BIOS_POS=  0000C6 
+    BIOS_PRM=  00F7B4     |     BIOS_PRM=  00F6E6     |     BIOS_PRM=  00F74E 
+    BIOS_PRM=  00F74C     |     BIOS_PRM=  00F6E4     |     BIOS_PRO=  00FD89 
+    BIOS_PRO=  000181     |     BIOS_PRS=  00FB35     |     BIOS_PRT=  00F416 
+    BIOS_PTR=  00F864     |     BIOS_PTR=  00F6A9     |     BIOS_PUT=  00F3F8 
+    BIOS_QIN=  0000B4     |     BIOS_QUE=  00F971     |     BIOS_QUE=  00F959 
+    BIOS_QUE=  00FB3E     |     BIOS_QUE=  00F3F3     |     BIOS_RAW=  00F418 
+    BIOS_RDP=  00F380     |     BIOS_RDP=  000096     |     BIOS_RDS=  00000C 
+    BIOS_RDV=  00013E     |     BIOS_RDV=  00004A     |     BIOS_RED=  0001F5 
+    BIOS_REP=  00F3F7     |     BIOS_RG0=  00F3DF     |     BIOS_RG1=  00F3E0 
+    BIOS_RG2=  00F3E1     |     BIOS_RG3=  00F3E2     |     BIOS_RG4=  00F3E3 
+    BIOS_RG5=  00F3E4     |     BIOS_RG6=  00F3E5     |     BIOS_RG7=  00F3E6 
+    BIOS_RG8=  00FFE7     |     BIOS_RG9=  00FFE8     |     BIOS_RND=  00F857 
+    BIOS_ROM=  00FAFA     |     BIOS_ROM=  00FCC0     |     BIOS_RSF=  00FB04 
+    BIOS_RSI=  00FB06     |     BIOS_RSL=  000138     |     BIOS_RST=  00FB03 
+    BIOS_RST=  000145     |     BIOS_RTP=  00F955     |     BIOS_RTY=  00FC9A 
+    BIOS_RUN=  00FCBE     |     BIOS_RUN=  00F866     |     BIOS_SAV=  00F87D 
+    BIOS_SAV=  00FCBF     |     BIOS_SAV=  00FB36     |     BIOS_SAV=  00F6AF 
+    BIOS_SAV=  00FB39     |     BIOS_SCN=  00F3F6     |     BIOS_SCR=  00FCAF 
+    BIOS_SET=  00007E     |     BIOS_SET=  000081     |     BIOS_SET=  00013D 
+    BIOS_SET=  00014D     |     BIOS_SET=  000050     |     BIOS_SET=  00007B 
+    BIOS_SET=  000078     |     BIOS_SET=  000053     |     BIOS_SKP=  00F94F 
+    BIOS_SLT=  00FCC9     |     BIOS_SLT=  00FCC5     |     BIOS_SLT=  00FD09 
+    BIOS_SNS=  000141     |     BIOS_STA=  00F3E7     |     BIOS_STK=  00F674 
+    BIOS_STM=  0000F3     |     BIOS_STR=  00F6C6     |     BIOS_STR=  000099 
+    BIOS_SUB=  00F6A5     |     BIOS_SUB=  00015C     |     BIOS_SWP=  00F7BC 
+    BIOS_SYN=  000008     |     BIOS_T32=  00F3C3     |     BIOS_T32=  00F3C1 
+    BIOS_T32=  00F3BF     |     BIOS_T32=  00F3BD     |     BIOS_T32=  00F3C5 
+    BIOS_TAP=  0000E4     |     BIOS_TAP=  0000E7     |     BIOS_TAP=  0000E1 
+    BIOS_TAP=  0000F0     |     BIOS_TAP=  0000EA     |     BIOS_TAP=  0000ED 
+    BIOS_TEM=  00F6A7     |     BIOS_TEM=  00F6BC     |     BIOS_TEM=  00F69D 
+    BIOS_TEM=  00F69F     |     BIOS_TEM=  00F7B8     |     BIOS_TEM=  00F768 
+    BIOS_TEM=  00F67A     |     BIOS_TOC=  00FB03     |     BIOS_TOT=  0000D2 
+    BIOS_TRA=  00FC4C     |     BIOS_TRC=  00F7C4     |     BIOS_TRG=  00F3E8 
+    BIOS_TTY=  00F661     |     BIOS_TXT=  00F3B9     |     BIOS_TXT=  00F3B7 
+    BIOS_TXT=  00F3B5     |     BIOS_TXT=  00F3B3     |     BIOS_TXT=  00F3BB 
+    BIOS_TXT=  00F676     |     BIOS_USR=  00F7F8     |     BIOS_USR=  00F39A 
+    BIOS_VAL=  00F663     |     BIOS_VAR=  00F6C2     |     BIOS_VCB=  00FB41 
+    BIOS_VCB=  00FB66     |     BIOS_VCB=  00FB8B     |     BIOS_VDP=  000131 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 4.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    BIOS_VLZ=  00F419     |     BIOS_VLZ=  00F41B     |     BIOS_VOI=  00F975 
+    BIOS_VOI=  00F9F5     |     BIOS_VOI=  00FA75     |     BIOS_VOI=  00FB38 
+    BIOS_WIN=  00FCA5     |     BIOS_WRP=  00F385     |     BIOS_WRS=  000014 
+    BIOS_WRT=  0001F9     |     BIOS_WRT=  000093     |     BIOS_WRT=  000047 
+    BIOS_WRT=  00004D     |     BIOS_WSL=  00013B     |     BIOS_XSA=  00FAFE 
+    BIOS_YSA=  00FB00     |   1 Bitmap     00001A GR  |     Bitmap.D=  00000F 
+    Bitmap.F=  000002     |     Bitmap.H=  000009     |   1 Bitmap.O   000020 GR
+    Bitmap.O=  000006     |     Bitmap.P=  000010     |     Bitmap.T=  000011 
+    Bitmap.T=  000008     |     Bitmap.V=  000004     |     Bitmap.W=  000007 
+    Bitmap.X=  000003     |     Bitmap.X=  00000B     |     Bitmap.Y=  000005 
+    Bitmap.Y=  00000D     |   0 Bitmap._=  000002 GR  |     Bitmap._=  000007 
+  0 Bitmap._=  000003 GR  |     Bitmap._=  000009     |   1 Bitmap._   00002D GR
+  0 Bitmap._   00001E GR  |     Bitmap._=  00000B     |   0 Bitmap._=  000004 GR
+    Bitmap._=  00000D     |   0 Bitmap._   000025 GR  |     Bitmap._=  00000F 
+  0 Bitmap._   000046 GR  |     Bitmap._=  000011     |   1 Bitmap._   000052 GR
+  1 Bitmap._   000052 GR  |     Bitmap._=  000012     |   1 Bitmap._   00001A GR
+    Bitmap.p=  000000     |   1 Bitmap.p   000021 GR  |   1 Bitmap.p   000023 GR
+  1 Bitmap.p   000025 GR  |   1 Bitmap.p   000027 GR  |   1 Bitmap.p   000029 R
+  1 Bitmap.p   00002B R   |   1 Bitmap.p   00001A GR  |     Bitmap.p=  000000 
+  1 Bitmap.p   00001E GR  |     Bitmap.p=  000004     |   1 Bitmap.p   00001C GR
+    Bitmap.p=  000002     |     Class.In=  000007     |     Class.In=  000000 
+    Class.No=  000000     |     Class.No=  000000     |     Class.Ob=  000006 
+    Class.pP=  000000     |     Class.pS=  000004     |     Class.pS=  000002 
+  1 Control    00000B GR  |     Control.=  000001     |     Control.=  000002 
+    Control.=  000002     |     Control.=  000009     |   1 Control.   000011 GR
+    Control.=  000006     |     Control.=  000007     |     Control.=  000003 
+    Control.=  000005     |   0 Control.=  000002 GR  |     Control.=  000007 
+  0 Control.=  000003 GR  |     Control.=  000009     |   1 Control.   00001A GR
+  0 Control.   000004 GR  |     Control.=  00000B     |   0 Control.   000004 GR
+    Control.=  00000D     |   1 Control.   000052 GR  |   1 Control.   000052 GR
+    Control.=  00000B     |   1 Control.   00000B GR  |     Control.=  000000 
+  1 Control.   000012 GR  |   1 Control.   000014 GR  |   1 Control.   000016 GR
+  1 Control.   000018 GR  |   1 Control.   00000B GR  |     Control.=  000000 
+  1 Control.   00000F GR  |     Control.=  000004     |   1 Control.   00000D GR
+    Control.=  000002     |   1 Object     000000 GR  |   1 Object.O   000006 GR
+    Object.O=  000006     |   0 Object._   000002 GR  |     Object._=  000007 
+  0 Object._   000003 GR  |     Object._=  000009     |   1 Object._   00000B GR
+  1 Object._   000052 GR  |   1 Object._   000052 GR  |     Object._=  000002 
+  1 Object._   000000 GR  |     Object.p=  000000     |   1 Object.p   000007 GR
+  1 Object.p   000009 GR  |   1 Object.p   000000 GR  |     Object.p=  000000 
+  1 Object.p   000004 GR  |     Object.p=  000004     |   1 Object.p   000002 GR
+    Object.p=  000002     |   1 Panel      000043 GR  |     Panel.Co=  00000B 
+    Panel.Di=  00000C     |     Panel.Fl=  000002     |     Panel.He=  000009 
+  1 Panel.Ob   000049 GR  |     Panel.Ob=  000006     |     Panel.Pa=  00000D 
+    Panel.Wi=  000007     |     Panel.X.=  000003     |     Panel.Y.=  000005 
+  0 Panel._C=  000002 GR  |     Panel._C=  000007     |   0 Panel._D=  000003 GR
+    Panel._D=  000009     |   1 Panel._E   000052 GR  |   0 Panel._O   000157 GR
+    Panel._O=  00000B     |   0 Panel._P=  000004 GR  |     Panel._P=  00000D 
+  1 Panel._S   000072 GR  |   1 Panel._S   000052 GR  |     Panel._S=  00000E 
+  1 Panel._S   000043 GR  |     Panel.pC=  000000     |   1 Panel.pC   00004A GR
+  1 Panel.pD   00004C GR  |   1 Panel.pO   00004E GR  |   1 Panel.pP   000050 GR
+  1 Panel.pP   000043 GR  |     Panel.pP=  000000     |   1 Panel.pS   000047 GR
+    Panel.pS=  000004     |   1 Panel.pS   000045 GR  |     Panel.pS=  000002 
+  1 VDP        00002D GR  |   1 VDP.Obje   000033 GR  |     VDP.Obje=  000006 
+    VDP.PORT=  000098     |     VDP.PORT=  000099     |     VDP.PORT=  00009A 
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 5.
+Hexadecimal [24-Bits]
+
+Symbol Table
+
+    VDP.PORT=  00009B     |   0 VDP._BCo   000072 GR  |     VDP._BCo=  000004 
+  0 VDP._Con=  000002 GR  |     VDP._Con=  000007     |   0 VDP._Des=  000003 GR
+    VDP._Des=  000009     |   1 VDP._End   000038 GR  |   0 VDP._RCo   000069 GR
+    VDP._RCo=  000002     |   0 VDP._RSc   00008E GR  |     VDP._RSc=  000008 
+  0 VDP._SCo   00005A GR  |     VDP._SCo=  000000     |   1 VDP._SMe   000052 GR
+  1 VDP._SPr   000052 GR  |   0 VDP._SSc   000086 GR  |     VDP._SSc=  000006 
+    VDP._Siz=  000002     |   1 VDP._Sta   00002D GR  |   1 VDP.pBCo   000056 GR
+    VDP.pCla=  000000     |   1 VDP.pCon   000034 GR  |   1 VDP.pDes   000036 GR
+  1 VDP.pPar   00002D GR  |     VDP.pPar=  000000     |   1 VDP.pRCo   000054 GR
+  1 VDP.pRSc   00005A GR  |   1 VDP.pSCo   000052 GR  |   1 VDP.pSMe   000031 GR
+    VDP.pSMe=  000004     |   1 VDP.pSPr   00002F GR  |     VDP.pSPr=  000002 
+  1 VDP.pSSc   000058 GR  |   1 VDP9938    000038 GR  |     VDP9938.=  0000F0 
+    VDP9938.=  0000D0     |     VDP9938.=  0000C0     |     VDP9938.=  000070 
+    VDP9938.=  0000A0     |     VDP9938.=  0000B0     |     VDP9938.=  000090 
+    VDP9938.=  000080     |     VDP9938.=  000040     |     VDP9938.=  000050 
+    VDP9938.=  000060     |     VDP9938.=  000000     |     VDP9938.=  0000E0 
+  0 VDP9938.   000148 R   |     VDP9938.=  000001     |     VDP9938.=  000000 
+    VDP9938.=  000004     |     VDP9938.=  000002     |     VDP9938.=  000009 
+    VDP9938.=  000008     |     VDP9938.=  00000C     |     VDP9938.=  00000A 
+    VDP9938.=  00000B     |     VDP9938.=  000003     |   1 VDP9938.   00003E GR
+    VDP9938.=  000006     |   0 VDP9938.   00012E R   |   0 VDP9938.   00013D R
+  0 VDP9938.   000127 R   |   0 VDP9938.   000139 R   |   0 VDP9938.=  000072 GR
+    VDP9938.=  000004     |   0 VDP9938.   000143 GR  |     VDP9938.=  000014 
+  0 VDP9938.=  000002 GR  |     VDP9938.=  000007     |   0 VDP9938.=  000003 GR
+    VDP9938.=  000009     |   1 VDP9938.   000043 GR  |   0 VDP9938.   0000C7 GR
+    VDP9938.=  00000C     |   0 VDP9938.=  000069 GR  |     VDP9938.=  000002 
+  0 VDP9938.   0000DE GR  |     VDP9938.=  00000E     |   0 VDP9938.=  00008E GR
+    VDP9938.=  000008     |   0 VDP9938.=  00005A GR  |     VDP9938.=  000000 
+  1 VDP9938.   00005C GR  |   1 VDP9938.   000052 GR  |   0 VDP9938.=  000086 GR
+    VDP9938.=  000006     |     VDP9938.=  000002     |   1 VDP9938.   000038 GR
+  0 VDP9938.   000124 GR  |     VDP9938.=  000012     |   0 VDP9938.   0000AF GR
+    VDP9938.=  00000A     |   0 VDP9938.   000106 GR  |     VDP9938.=  000010 
+  1 VDP9938.   000060 GR  |   1 VDP9938.   000070 GR  |     VDP9938.=  000000 
+  1 VDP9938.   00003F GR  |   1 VDP9938.   000041 GR  |   1 VDP9938.   000068 GR
+  1 VDP9938.   000038 GR  |     VDP9938.=  000000     |   1 VDP9938.   00005E GR
+  1 VDP9938.   00006A GR  |   1 VDP9938.   000064 GR  |   1 VDP9938.   00005C GR
+  1 VDP9938.   00003C GR  |     VDP9938.=  000004     |   1 VDP9938.   00003A GR
+    VDP9938.=  000002     |   1 VDP9938.   000062 GR  |   1 VDP9938.   00006E GR
+  1 VDP9938.   000066 GR  |   1 VDP9938.   00006C GR  |   0 _zoo_cal   000000 GR
+  0 _zoo_err   000001 GR
+
+ASxxxx Assembler V02.00 + NoICE + SDCC mods  (Zilog Z80 / Hitachi HD64180 / ZX-Next / eZ80), page 6.
+Hexadecimal [24-Bits]
+
+Area Table
+
+   0 _CODE      size    162   flags    0
+   1 _DATA      size     72   flags    0
+
