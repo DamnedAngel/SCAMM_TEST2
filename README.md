@@ -1,2 +1,2 @@
-# SCAMM_TEST2
-More experiences on funcionalities for a Engine Motor for MSX.
+# SCAMM
+SCAMM - Scripted Compact Adventure Motor for MSX

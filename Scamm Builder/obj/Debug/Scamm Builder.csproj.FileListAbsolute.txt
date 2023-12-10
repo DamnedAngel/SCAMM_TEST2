@@ -1,0 +1,47 @@
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\bin\Debug\Scamm Builder.exe.config
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\bin\Debug\Scamm Builder.exe
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\bin\Debug\Scamm Builder.pdb
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm Builder.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm_Builder.Properties.Resources.resources
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm Builder.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm Builder.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm Builder.exe
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm Builder.pdb
+C:\Users\admin\Documents\Projects\MSX\SCAMM Builder\Scamm Builder\Scamm Builder\obj\Debug\Scamm_Builder.FormSCAMM.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Scamm Builder.exe.config
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Scamm Builder.exe
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Scamm Builder.pdb
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Antlr3.Runtime.dll
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Antlr4.StringTemplate.dll
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Antlr3.Runtime.xml
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\bin\Debug\Antlr4.StringTemplate.xml
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm Builder.csprojResolveAssemblyReference.cache
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.FormSCAMM.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.FormSourceView.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.Properties.Resources.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMContextTab.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMGameTab.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMNodeTab.resources
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm Builder.csproj.GenerateResource.Cache
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm Builder.csproj.CoreCompileInputs.cache
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm Builder.exe
+I:\Emulator\MSX\DEV\projects\SCAMM - Copy (2)\Scamm Builder\obj\Debug\Scamm Builder.pdb
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Scamm Builder.exe.config
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Scamm Builder.exe
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Scamm Builder.pdb
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Antlr3.Runtime.dll
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Antlr4.StringTemplate.dll
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Antlr3.Runtime.xml
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\bin\Debug\Antlr4.StringTemplate.xml
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.FormSCAMM.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.FormSourceView.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.Properties.Resources.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMContextTab.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMGameTab.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm_Builder.SCAMMNodeTab.resources
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.csproj.GenerateResource.Cache
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.csproj.CoreCompileInputs.cache
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.exe
+I:\Emulator\MSX\DEV\Projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.pdb
+I:\Emulator\MSX\DEV\projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.csprojAssemblyReference.cache
+I:\Emulator\MSX\DEV\projects\SCAMM\Scamm Builder\obj\Debug\Scamm Builder.csproj.CopyComplete

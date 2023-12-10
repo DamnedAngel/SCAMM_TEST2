@@ -1,0 +1,60 @@
+;--- Game Script
+
+;	.globl	_main
+
+;	.area _HEADER (ABS)
+
+	.area _GAMEVARS (ABS)
+	.org    0x3200  ;SCAMM Game start address
+
+<gameVars:{ gameVar |
+<if(gameVar.IsInt8)>
+<gameVar.name>:<gameVar.NamePadding>;Int8, <gameVar.description>
+	.db		#<gameVar.valueAsByte>
+<elseif(gameVar.IsInt16)>
+<gameVar.name>:<gameVar.NamePadding>;Int16, <gameVar.description>
+	.dw		#<gameVar.valueAsWord>
+<elseif(gameVar.IsInt32)>
+<gameVar.name>:<gameVar.NamePadding>;Int32, <gameVar.description>
+	.dw		#<gameVar.valueAsLowerWord>, #<gameVar.valueAsUpperWord>
+<elseif(gameVar.IsStr)>
+<gameVar.name>:<gameVar.NamePadding>;Str, <gameVar.description>
+	.db		"<gameVar.value>\0"
+<elseif(gameVar.IsPointer)>
+<gameVar.name>:<gameVar.NamePadding>;Pointer, <gameVar.description>
+	.dw		_<gameVar.name>
+<elseif(gameVar.IsPStr)>
+<gameVar.name>:<gameVar.NamePadding>;PStr, <gameVar.description>
+	.dw		_<gameVar.name>
+<elseif(gameVar.IsPBuffer)>
+<gameVar.name>:<gameVar.NamePadding>;PBuffer, <gameVar.description>
+	.dw		_<gameVar.name>
+<elseif(gameVar.IsPEventHandler)>
+<gameVar.name>:<gameVar.NamePadding>;PEventHandler, <gameVar.description>
+	.dw		_<gameVar.name>
+<elseif(gameVar.IsPObject)>
+<gameVar.name>:<gameVar.NamePadding>;PObject, <gameVar.description>
+	.dw		_<gameVar.name>
+<elseif(gameVar.IsPObjectList)>
+<gameVar.name>:<gameVar.NamePadding>;PObjectList, <gameVar.description>
+	.dw		_<gameVar.name>
+<endif>
+}>
+
+;	.area _GAMESTRINGS
+
+<gameVars:{ gameVar |
+<if(gameVar.IsPStr)>
+_<gameVar.name>:
+	.strz		"<gameVar.value>"
+<endif>
+}>
+
+;	.area _GAMEEVENTHANDLERS
+
+<gameVars:{ gameVar |
+<if(gameVar.IsPEventHandler)>
+_<gameVar.name>:
+<gameVar.value>
+<endif>
+}>

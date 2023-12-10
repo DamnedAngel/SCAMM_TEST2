@@ -1,0 +1,3 @@
+[MSX_LIB_PATH]\zoo\framework\Bitmap.xls
+[MSX_LIB_PATH]\zoo\framework\MSX\VDP9938.xml
+[MSX_LIB_PATH]\zoo\framework\Panel.xls

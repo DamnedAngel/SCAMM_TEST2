@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EF693307-0D63-472A-A85C-AFDACF87062E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Scamm_Builder</RootNamespace>
+    <AssemblyName>Scamm Builder</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr4.StringTemplate, Version=4.0.7.0, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\StringTemplate4.4.0.8\lib\net35-client\Antlr4.StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormSCAMM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSCAMM.Designer.cs">
+      <DependentUpon>FormSCAMM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSourceView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSourceView.Designer.cs">
+      <DependentUpon>FormSourceView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SCAMMContext.cs" />
+    <Compile Include="SCAMMContextTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCAMMException.cs" />
+    <Compile Include="SCAMMGameTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCAMMPicture.cs" />
+    <Compile Include="SCAMMGame.cs" />
+    <Compile Include="SCAMMNode.cs" />
+    <Compile Include="SCAMMObject.cs" />
+    <Compile Include="SCAMMNodeTab.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SCAMMUtil.cs" />
+    <Compile Include="ScammVariable.cs" />
+    <Compile Include="ScammVariableType.cs" />
+    <Compile Include="ScammVariableUsage.cs" />
+    <EmbeddedResource Include="FormSCAMM.resx">
+      <DependentUpon>FormSCAMM.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSourceView.resx">
+      <DependentUpon>FormSourceView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="..\SCAMM\GameFieldsSize.s">
+      <Link>Resources\GameFieldsSize.s</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SCAMM\GameStructure.s">
+      <Link>Resources\GameStructure.s</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\SCAMM\ContextStructure.s">
+      <Link>Resources\ContextStructure.s</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCAMMContextTab.resx">
+      <DependentUpon>SCAMMContextTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCAMMGameTab.resx">
+      <DependentUpon>SCAMMGameTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SCAMMNodeTab.resx">
+      <DependentUpon>SCAMMNodeTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\GameTemplate.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

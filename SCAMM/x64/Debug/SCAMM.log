@@ -1,0 +1,13 @@
+﻿  -----------------------------------------------------------------------------------
+  MSX SDCC MAKEFILE by Danilo Angelo
+  -----------------------------------------------------------------------------------
+  Building Target configuration defines...
+  The system cannot find the file TargetConfig_.txt.
+  Done.
+  -----------------------------------------------------------------------------------
+  Building assembler modules...
+  1Processing ASM file scamm_vdp.s... removing 
+  ?ASxxxx-Error-<cannot create> : "\objs\scamm_vdp.rel"
+  FAIL	
+  Failed building scamm_vdp.s
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.MakeFile.Targets(44,5): error MSB3073: The command "make" exited with code 3.
